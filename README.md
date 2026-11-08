@@ -4,6 +4,8 @@ A rule-based risk scoring model that sorts 30,000 bank account applications into
 
 > **Scope, stated honestly:** the dataset label is **account-opening fraud**, not money laundering or a KYC outcome. I use it to practise the *risk-rating and review-prioritisation* part of KYC/CDD on a large, realistic data set. The data is **synthetic**.
 
+**[Open the interactive explorer](https://salil360-cyber.github.io/kyc-application-risk-profiling/)**: change any threshold, point value or tier cut-off and the 30,000 applications are re-scored in your browser.
+
 ![Applications vs fraud by tier](charts/02_applications_vs_fraud.png)
 
 ## Dataset
@@ -53,6 +55,8 @@ Structured parameter sheet with named ranges, `IF`/nested tiering, `SUMPRODUCT`,
 | `BAF_Sample_30k.csv` | The 30,000-row working sample |
 | `charts.py` | Re-scores the sample in Python using the thresholds in `Ref_Rules`, checks the tier counts match the workbook, and draws the charts |
 | `charts/` | Report charts |
+| `build_explorer.py` | Packs the sample, checks the default rules reproduce the workbook's tier counts, and builds `docs/index.html` |
+| `docs/` | Interactive explorer (GitHub Pages) |
 
 ## How to use
 Open `Ref_Rules`, change any yellow cell (a threshold, a point value, a tier cut-off), and every flag, score, tier, summary and chart recalculates.
